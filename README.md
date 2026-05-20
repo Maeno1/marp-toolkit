@@ -8,6 +8,20 @@ Marp スライド作成のためのテーマ CSS と、AI 臭防止の知識ベ�
 
 派生テーマ（自社ブランドカラーや背景画像を上乗せしたいケース）は、CSS には触らず Marp 標準の `![bg]` 構文で背景画像を当てる構成を推奨します。詳細は下の「背景画像の当て方」を参照。
 
+## Preview
+
+`examples/sample.md` を marp-cli でレンダリングした見た目です。
+
+| Title | Index | Content (page + ![bg]) |
+|---|---|---|
+| ![title](examples/screenshots/sample.001.png) | ![index](examples/screenshots/sample.002.png) | ![content](examples/screenshots/sample.003.png) |
+
+| Split text | Table | Summary | End |
+|---|---|---|---|
+| ![split-text](examples/screenshots/sample.004.png) | ![table](examples/screenshots/sample.005.png) | ![summary](examples/screenshots/sample.006.png) | ![end](examples/screenshots/sample.007.png) |
+
+生成コマンド: `bash examples/render-screenshots.sh`（中身は `marp examples/sample.md --images png --allow-local-files --theme-set themes/base.css -o examples/screenshots/sample.png`）
+
 ## 構成
 
 ```
@@ -16,11 +30,12 @@ marp-toolkit/
 │   └── base.css                # 汎用テーマ（レイアウト + タイポグラフィ + プライマリカラー）
 ├── examples/
 │   ├── sample.md               # base.css のショーケース
-│   └── assets/img/             # ![bg] 構文で使うダミー背景画像（SVG）
-│       ├── bg_title.svg
-│       ├── bg_index.svg
-│       ├── bg_page.svg
-│       └── bg_end.svg
+│   ├── assets/img/             # ![bg] 構文で使うダミー背景画像（SVG）
+│   │   ├── bg_title.svg
+│   │   ├── bg_index.svg
+│   │   ├── bg_page.svg
+│   │   └── bg_end.svg
+│   └── screenshots/            # sample.md を marp-cli でレンダリングした PNG（README の Preview 用）
 └── anti-aiisms/                # AI 臭防止の知識ベース
     ├── README.md
     ├── RUBRIC.md
@@ -143,6 +158,8 @@ VS Code Preview 経由ではなく `marp-cli` で PDF/HTML エクスポートす
 marp <slide>.md --pdf --allow-local-files \
   --theme-set <path-to-marp-toolkit>/themes/base.css
 ```
+
+> ⚠️ **`--theme-set` は必須**: frontmatter で `theme: base` を指定しても、Marp CLI は別途 `--theme-set` で base.css の path を渡さないと `base` というテーマを解決できません。指定がないと Marp Core 内蔵の default theme が fallback で当たり、レイアウト・色 (`#4472C4` 系)・フォントサイズ・grid 系クラス (`split-text` 等) が全て崩れます。VS Code Marp Extension は `markdown.marp.themes` 設定経由でテーマを認識するのでこの問題は起きません。CLI 経由のときだけ要注意です（同梱の `examples/render-screenshots.sh` は正しく組まれた呼び出しの参考例）。
 
 ## anti-aiisms について
 

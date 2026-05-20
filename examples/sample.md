@@ -8,9 +8,9 @@ paginate: true
 
 ![bg](assets/img/bg_title.svg)
 
-# marp-toolkit サンプルスライド
+## marp-toolkit サンプルスライド
 
-## base.css のショーケース
+### base.css のショーケース
 
 **2026-05-20**
 
@@ -20,7 +20,7 @@ paginate: true
 
 ![bg left:13%](assets/img/bg_index.svg)
 
-# 目次
+## 目次
 
 1. レイアウト部品（split / split-2x2）
 2. 表とハイライト
@@ -33,7 +33,7 @@ paginate: true
 
 ![bg](assets/img/bg_page.svg)
 
-# レイアウト部品
+## レイアウト部品
 
 base.css には `section.split`, `section.split-reverse`, `section.split-images`, `section.split-text`, `section.split-2x2` の 5 種類のグリッドレイアウトが定義されています。
 
@@ -45,7 +45,7 @@ base.css には `section.split`, `section.split-reverse`, `section.split-images`
 
 <!-- _class: split-text -->
 
-# 2 カラムテキスト対比
+## 2 カラムテキスト対比
 
 <div class="left">
 
@@ -77,7 +77,7 @@ base.css には `section.split`, `section.split-reverse`, `section.split-images`
 
 <!-- _class: table -->
 
-# 表とハイライト
+## 表とハイライト
 
 | 項目 | 状態 | 計測値 | 前月比 | 備考 |
 |---|---|---|---|---|
@@ -94,7 +94,7 @@ base.css には `section.split`, `section.split-reverse`, `section.split-images`
 
 <!-- _class: summary -->
 
-# サマリと推奨
+## サマリと推奨
 
 <p class="status-good">A 系統は良好な水準を維持</p>
 <p class="status-fair">B 系統は前月比で低下。来月の閾値到達リスクあり</p>
@@ -115,5 +115,3 @@ base.css には `section.split`, `section.split-reverse`, `section.split-images`
 <!-- _class: end -->
 
 ![bg](assets/img/bg_end.svg)
-
-# Thank you
