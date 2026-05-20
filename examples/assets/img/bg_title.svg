@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice">
+  <rect width="1280" height="720" fill="#f8f9fa"/>
+  <rect x="0" y="600" width="1280" height="6" fill="#4472C4"/>
+  <text x="40" y="40" font-family="sans-serif" font-size="12" fill="#cccccc">bg_title.svg — dummy placeholder (1280×720)</text>
+  <text x="640" y="380" font-family="sans-serif" font-size="32" fill="#dddddd" text-anchor="middle">Title background</text>
+</svg>

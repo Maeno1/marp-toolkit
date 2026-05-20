@@ -1,0 +1,729 @@
+/* @theme base */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* ========================================
+   Primary Color
+   ======================================== */
+/* 統合テーマのアクセントカラー。色そのものを変えたい場合は派生テーマ側で上書きする */
+
+/* ========================================
+   Base Section Styles
+   ======================================== */
+section {
+  font-size: 18px;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  padding: 50px 40px 40px 40px;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Header & Footer
+   ======================================== */
+header {
+  position: absolute;
+  top: 3px;
+  left: 30px;
+  font-size: 18px;
+  color: #aaaaaa;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  left: 40px;
+  font-size: 10px;
+  color: #888888;
+}
+
+section::after {
+  bottom: 5px !important;
+  right: 30px !important;
+  padding: 0 !important;
+  font-size: 10px;
+  color: #888888;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #4472C4;
+  border-bottom: 2px solid #4472C4;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #4472C4;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #333333;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.text-primary {
+  color: #4472C4;
+}
+
+/* ========================================
+   Footnote
+   ======================================== */
+.footnote {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  right: 50px;
+  font-size: 0.7em;
+  color: #666;
+  line-height: 1.4;
+  padding-top: 8px;
+}
+
+.footnote p {
+  margin: 0;
+  padding: 0;
+}
+
+.footnote-small {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  right: 50px;
+  font-size: 0.5em;
+  color: #888;
+  line-height: 1.3;
+}
+
+/* ========================================
+   Split Layouts (generic 2-column structures)
+   ======================================== */
+section.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+section.split h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 10px;
+}
+
+section.split .left {
+  grid-column: 1;
+  grid-row: 2;
+  padding-right: 15px;
+}
+
+section.split .right {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+section.split .right img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.split .right img:not(:only-child) {
+  max-height: 170px;
+}
+
+section.split .summary-box {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+section.split-reverse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+section.split-reverse h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 10px;
+}
+
+section.split-reverse .left {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.split-reverse .left img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.split-reverse .right {
+  grid-column: 2;
+  grid-row: 2;
+  padding-left: 15px;
+}
+
+section.split-reverse .summary-box {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+section.split-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 10px 20px;
+  padding-top: 60px;
+}
+
+section.split-images h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 10px;
+}
+
+section.split-images .left {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.split-images .left img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.split-images .left-caption {
+  grid-column: 1;
+  grid-row: 3;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666666;
+  padding: 5px 10px;
+}
+
+section.split-images .right {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.split-images .right img {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.split-images .right-caption {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: center;
+  font-size: 0.9em;
+  color: #666666;
+  padding: 5px 10px;
+}
+
+section.split-images .summary-box {
+  grid-column: 1 / -1;
+  grid-row: 4;
+}
+
+section.split-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  padding-top: 60px;
+}
+
+section.split-text h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 10px;
+}
+
+section.split-text .left {
+  grid-column: 1;
+  grid-row: 2;
+  padding-right: 15px;
+  border-right: 1px solid #e0e0e0;
+}
+
+section.split-text .right {
+  grid-column: 2;
+  grid-row: 2;
+  padding-left: 15px;
+}
+
+section.split-text .summary-box {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+section.split-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap: 15px 20px;
+  padding-top: 60px;
+}
+
+section.split-2x2 h1 {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin-bottom: 5px;
+}
+
+section.split-2x2 .top-left {
+  grid-column: 1;
+  grid-row: 2;
+  padding-right: 15px;
+}
+
+section.split-2x2 .top-right {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.split-2x2 .top-right img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.split-2x2 .bottom-left {
+  grid-column: 1;
+  grid-row: 3;
+  padding-right: 15px;
+}
+
+section.split-2x2 .bottom-right {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.split-2x2 .bottom-right img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Page Slide (_class: page)
+   ======================================== */
+section.page h1 {
+  border-bottom: none;
+}
+
+section.page table {
+  width: auto;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-left: 60px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+
+section.page th {
+  background: none;
+  color: #000000;
+  font-weight: 700;
+  padding: 8px 16px;
+  text-align: center;
+  border: none;
+  border-bottom: 1pt solid #cccccc;
+  line-height: 1.4;
+}
+
+section.page td {
+  padding: 6px 16px;
+  border: none;
+  text-align: center;
+}
+
+section.page tr:nth-child(even) {
+  background: none;
+}
+
+/* ========================================
+   Title Slide (_class: title)
+   ======================================== */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding-top: 200px;
+  padding-left: 40px;
+}
+
+section.title h1,
+.title h1,
+section[class="title"] h1,
+section[class*="title"] h1 {
+  color: #333333 !important;
+  font-size: 2.4em !important;
+  font-weight: 700 !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-top: 60px !important;
+  margin-bottom: 30px !important;
+}
+
+section.title > h2 {
+  color: #333333;
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+section.title > p {
+  color: #333333;
+  font-size: 0.9em;
+  margin-top: 30px;
+}
+
+section.title > p > strong {
+  color: #333333;
+  font-weight: 400;
+}
+
+/* ========================================
+   Index Slide (_class: index)
+   ======================================== */
+section.index {
+  background-position: left center;
+  background-size: 13% 100%;
+  background-repeat: no-repeat;
+  padding: 0 40px 40px 15%;
+}
+
+section.index h1 {
+  color: #333333;
+  font-size: 2.0em;
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 80px;
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+
+section.index p {
+  font-size: 1.1em;
+  line-height: 2.0;
+  margin: 0;
+  margin-left: 60px;
+}
+
+section.index ol {
+  font-size: 1.1em;
+  line-height: 2.0;
+  margin-left: 60px;
+}
+
+section.index ol li {
+  margin-bottom: 8px;
+}
+
+section.index strong {
+  color: #4472C4;
+}
+
+/* ========================================
+   Summary Box (Brand-styled)
+   ======================================== */
+.summary-box {
+  background: linear-gradient(to right, #E8F4FC, #ffffff);
+  border-left: 4px solid #4472C4;
+  padding: 15px 20px;
+  margin-top: 15px;
+  border-radius: 0 5px 5px 0;
+  font-size: 0.95em;
+}
+
+.summary-box strong {
+  color: #4472C4;
+}
+
+/* ========================================
+   Box Info (Brand-styled)
+   ======================================== */
+.box-info {
+  background: #E8F4FC;
+  border: 1px solid #4472C4;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+/* ========================================
+   Table Slide (_class: table)
+   ======================================== */
+section.table {
+  padding-top: 60px;
+}
+
+section.table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+section.table th {
+  background: #4472C4;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid #3a62a8;
+}
+
+section.table td {
+  padding: 8px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+section.table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+section.table tr:hover {
+  background: #E8F4FC;
+}
+
+section.table td.highlight {
+  background: #FFF3CD;
+  font-weight: 500;
+}
+
+section.table td.positive {
+  color: #28a745;
+  font-weight: 500;
+}
+
+section.table td.negative {
+  color: #C00000;
+  font-weight: 500;
+}
+
+section.table td:nth-child(1),
+section.table td:nth-child(2) {
+  text-align: left;
+  padding-left: 12px;
+}
+
+section.table td:nth-child(3),
+section.table td:nth-child(4),
+section.table td:nth-child(5) {
+  text-align: right;
+  padding-right: 12px;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* ========================================
+   Summary Slide (_class: summary)
+   ======================================== */
+section.summary {
+  padding-top: 60px;
+}
+
+section.summary h1 {
+  margin-bottom: 20px;
+}
+
+section.summary .status-good::before {
+  content: '○ ';
+  color: #28a745;
+  font-weight: bold;
+}
+
+section.summary .status-fair::before {
+  content: '△ ';
+  color: #ffc107;
+  font-weight: bold;
+}
+
+section.summary .status-poor::before {
+  content: '× ';
+  color: #C00000;
+  font-weight: bold;
+}
+
+section.summary .recommendation {
+  background: #E8F4FC;
+  border: 2px solid #4472C4;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+section.summary .recommendation h3 {
+  color: #4472C4;
+  margin-bottom: 10px;
+}
+
+/* ========================================
+   End Slide (_class: end)
+   ======================================== */
+section.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.end h1 {
+  color: #ffffff;
+  font-size: 2em;
+  border-bottom: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-danger { color: #C00000; }
+.text-success { color: #28a745; }
+.text-warning { color: #ffc107; }
+.text-muted { color: #888888; }
+
+.text-small { font-size: 0.85em; }
+.text-large { font-size: 1.2em; }
+
+.mt-0 { margin-top: 0; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-0 { margin-bottom: 0; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+
+.box-warning {
+  background: #FFF3CD;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.box-danger {
+  background: #F8D7DA;
+  border: 1px solid #C00000;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+img.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+img.rounded {
+  border-radius: 8px;
+}
+
+img.border {
+  border: 1px solid #dddddd;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.columns .col {
+  padding: 10px;
+}
+
+.columns-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* ========================================
+   PDF Export
+   ======================================== */
+@media print {
+  section {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
