@@ -17,6 +17,10 @@ section {
   background: #ffffff;
   color: #333333;
   line-height: 1.6;
+  /* 日本語ビジネス資料向け改行最適化（Chromium 119+ で auto-phrase 有効、他ブラウザは fallback で normal） */
+  word-break: auto-phrase;
+  line-break: strict;
+  overflow-wrap: anywhere;
 }
 
 /* ========================================
