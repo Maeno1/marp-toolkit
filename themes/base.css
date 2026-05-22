@@ -104,6 +104,70 @@ strong {
 }
 
 /* ========================================
+   Inline & Block Elements
+   ======================================== */
+
+/* インラインコード（コマンド名・カラム名・JSON キー等） */
+section :not(pre) > code {
+  background: #eef1f4;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: 'Consolas', 'Monaco', 'JetBrains Mono', 'Roboto Mono', monospace;
+}
+
+/* コードブロック */
+section pre {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.8em 1em;
+  font-size: 0.7em;
+  line-height: 1.4;
+  overflow-x: auto;
+}
+
+section pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: 'Consolas', 'Monaco', 'JetBrains Mono', 'Roboto Mono', monospace;
+}
+
+/* 引用 / 出典バー（summary-box とは別用途。「※注:」「※出典:」等） */
+section blockquote {
+  border-left: 4px solid #4472C4;
+  background: #f7f9fc;
+  color: #555555;
+  padding: 0.4em 0.8em;
+  margin: 1em 0;
+  font-size: 0.85em;
+}
+
+/* 水平線（薄罫線でセクション内区切り） */
+section hr {
+  border: 0;
+  border-top: 1px solid #d0d7de;
+  margin: 0.8em 0;
+  height: 0;
+}
+
+/* リンク */
+section a {
+  color: #4472C4;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* 蛍光ペン風マーカー（HTML <mark> 要素で利用） */
+section mark {
+  background: linear-gradient(transparent 60%, #fff3a0 60%);
+  color: inherit;
+  padding: 0 0.1em;
+}
+
+/* ========================================
    Footnote
    ======================================== */
 .footnote {
@@ -731,9 +795,30 @@ img.border {
 /* ========================================
    PDF Export
    ======================================== */
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
 @media print {
   section {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    break-after: page;
+    break-inside: avoid;
+  }
+  /* 「裁ち切れ事故」を防ぐ: 表・コードブロック・囲みは中で改ページしない */
+  table,
+  pre,
+  .summary-box,
+  .recommendation,
+  .box-info,
+  .box-warning,
+  .box-danger {
+    break-inside: avoid;
+  }
+  /* 見出しの直後に改ページが入って「孤立見出し」になるのを防ぐ */
+  h1, h2, h3 {
+    break-after: avoid;
   }
 }
